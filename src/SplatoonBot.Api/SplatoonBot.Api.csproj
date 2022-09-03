@@ -9,7 +9,7 @@
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\src\SplatoonBot\SplatoonBot.csproj" />
+	  <ProjectReference Include="..\SplatoonBot\SplatoonBot.csproj" />
 	</ItemGroup>
 
 </Project>
