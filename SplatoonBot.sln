@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplatoonBot.Api", "SplatoonBot.Api\SplatoonBot.Api.csproj", "{D933A9AD-C278-4A8B-A184-ACD66AE23778}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplatoonBot", "src\SplatoonBot\SplatoonBot.csproj", "{7BFE7340-0A46-4A39-9A49-44EB67C4DA4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D933A9AD-C278-4A8B-A184-ACD66AE23778}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D933A9AD-C278-4A8B-A184-ACD66AE23778}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D933A9AD-C278-4A8B-A184-ACD66AE23778}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D933A9AD-C278-4A8B-A184-ACD66AE23778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BFE7340-0A46-4A39-9A49-44EB67C4DA4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BFE7340-0A46-4A39-9A49-44EB67C4DA4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BFE7340-0A46-4A39-9A49-44EB67C4DA4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BFE7340-0A46-4A39-9A49-44EB67C4DA4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FC1A135-04C7-4659-8D97-9C94ECF052FA}
+	EndGlobalSection
+EndGlobal
