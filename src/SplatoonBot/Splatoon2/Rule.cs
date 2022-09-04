@@ -20,7 +20,7 @@ namespace SplatoonBot.Splatoon2
                     "splat_zones" => "区域",
                     "tower_control" => "推塔",
                     "rainmaker" => "运鱼",
-                    "clam_blitz" => "区域",
+                    "clam_blitz" => "蛤蜊",
                     _ => null
                 } ?? string.Empty;
             }
