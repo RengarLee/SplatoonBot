@@ -2,6 +2,7 @@
 using SplatoonBot.Splatoon2;
 
 namespace SplatoonBot.Api.Controllers;
+
 [ApiController]
 public class Splatoon2Controller : Controller
 {
@@ -13,7 +14,7 @@ public class Splatoon2Controller : Controller
     }
 
     [HttpGet("Schedules")]
-    public Task<Schedules> GetSchedulesAsync()
+    public Task<Splatoon2Schedules> GetSchedulesAsync()
     {
         return _splatoon2Manager.GetSchedulesAsync();
     }

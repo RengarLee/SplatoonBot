@@ -2,7 +2,7 @@
 
 namespace SplatoonBot.Splatoon2;
 
-public class Schedules
+public class Splatoon2Schedules
 {
     public List<Schedule> Regular { get; set; }
 

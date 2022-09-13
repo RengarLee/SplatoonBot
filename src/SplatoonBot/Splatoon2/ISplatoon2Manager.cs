@@ -2,7 +2,7 @@
 {
     public interface ISplatoon2Manager
     {
-        Task<Schedules?> GetSchedulesAsync();
+        Task<Splatoon2Schedules?> GetSchedulesAsync();
         Task<List<Schedule>> GetScheduleListAsync(DateTime startTime, DateTime endTime);
     }
 }
