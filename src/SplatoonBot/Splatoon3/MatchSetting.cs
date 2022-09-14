@@ -12,6 +12,8 @@ public class MatchSetting
     public VsRule VsRule { get; set; }
 
     public string Mode { get; set; }
+
+    public bool IsOpen => Mode.Equals("OPEN");
 }
 
 public class VsRule
@@ -21,6 +23,22 @@ public class VsRule
     public string Rule { get; set; }
 
     public string Id { get; set; }
+
+    public string ChineseName
+    {
+        get
+        {
+            return Name switch
+            {
+                "Splat Zones" => "区域",
+                "Tower Control" => "推塔",
+                "Rainmaker" => "运鱼",
+                "Clam Blitz" => "蛤蜊",
+                _ => null
+            } ?? string.Empty;
+        }
+    }
+
 }
 
 public class VsStage

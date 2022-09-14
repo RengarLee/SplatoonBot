@@ -14,7 +14,7 @@ public class Splatoon2Manager : ISplatoon2Manager
 
     public Task<Splatoon2Schedules?> GetSchedulesAsync()
     {
-        return _memoryCache.GetOrCreateAsync("schedules", (key) =>
+        return _memoryCache.GetOrCreateAsync("splatoon2schedules", (key) =>
         {
             key.SetAbsoluteExpiration(new TimeSpan(0,0,30,0));
             var client = new RestClient("https://splatoon2.ink/data");

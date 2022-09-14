@@ -5,11 +5,8 @@ public class BankaraSchedules
     public List<BankaraSchedule> Nodes { get; set; }
 }
 
-public class BankaraSchedule
+public class BankaraSchedule : BaseSchedule
 {
-    public DateTime StartTime { get; set; }
-    public DateTime EndTime { get; set; }
-
-    public MatchSetting BankaraMatchSettings { get; set; }
-    public MatchSetting FestMatchSetting { get; set; }
+    public List<MatchSetting> BankaraMatchSettings { get; set; }
+    public List<MatchSetting> FestMatchSetting { get; set; }
 }

@@ -2,7 +2,7 @@
 using SplatoonBot.Splatoon2;
 
 namespace SplatoonBot.Api.Controllers;
-
+[Route("Splatoon2")]
 [ApiController]
 public class Splatoon2Controller : Controller
 {

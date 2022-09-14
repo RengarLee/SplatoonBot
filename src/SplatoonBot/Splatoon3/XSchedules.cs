@@ -10,6 +10,6 @@ public class XSchedule
     public DateTime StartTime { get; set; }
     public DateTime EndTime { get; set; }
 
-    public MatchSetting XMatchSettings { get; set; }
+    public MatchSetting xMatchSetting { get; set; }
     public MatchSetting FestMatchSetting { get; set; }
 }

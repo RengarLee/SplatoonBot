@@ -12,11 +12,8 @@ public class CoopGroupingRegularSchedules
     public List<CoopGroupingRegularSchedule> Nodes { get; set; }
 }
 
-public class CoopGroupingRegularSchedule
+public class CoopGroupingRegularSchedule:BaseSchedule
 {
-    public DateTime StartTime { get; set; }
-    public DateTime EndTime { get; set; }
-
     public CoopGroupingSetting Setting { get; set; }
 }
 
@@ -25,7 +22,7 @@ public class CoopGroupingSetting
     [JsonPropertyName("__typename")] public string TypeName { get; set; }
 
     public CoopStage CoopStage { get; set; }
-    public List<Weapon> Weapon { get; set; }
+    public List<Weapon> Weapons { get; set; }
 }
 
 public class CoopStage
