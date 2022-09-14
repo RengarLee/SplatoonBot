@@ -2,6 +2,7 @@
 using SplatoonBot.Text;
 
 namespace SplatoonBot.Api.Controllers;
+
 [ApiController]
 public class TextController : Controller
 {

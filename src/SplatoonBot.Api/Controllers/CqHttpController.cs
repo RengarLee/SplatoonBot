@@ -15,7 +15,7 @@ public class CqHttpController : Controller
     }
 
     [HttpGet("Message/CqSplatoonSchedule")]
-    public Task GetCqSplatoonScheduleMessagesAsync(string text, bool isSend = false, int? groupId = null)
+    public Task<List<string>> GetCqSplatoonScheduleMessagesAsync(string text, bool isSend = false, int? groupId = null)
     {
         return _cqHttpService.GetCqSplatoonScheduleMessagesAsync(text, isSend, groupId);
     }
