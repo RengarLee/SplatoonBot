@@ -55,7 +55,7 @@ public class Splatoon3Manager : ISplatoon3Manager
                 if (challenge != null)
                 {
                     sb.AppendLine(
-                        $"开放 {challenge.VsRule.ChineseName} 开始时间：{group.Key.LocalStartTime:t} 结束时间：{group.Key.LocalEndTime:t}");
+                        $"挑战 {challenge.VsRule.ChineseName} 开始时间：{group.Key.LocalStartTime:t} 结束时间：{group.Key.LocalEndTime:t}");
                     sb.Append(
                         $"[CQ:image,file={challenge.VsStages[0].Name},url={challenge.VsStages[0].Image.Url}]");
                     sb.Append(
@@ -66,7 +66,7 @@ public class Splatoon3Manager : ISplatoon3Manager
                 if (open != null)
                 {
                     sb.AppendLine(
-                        $" {open.VsRule.ChineseName}  开始时间：{group.Key.LocalStartTime:t} 结束时间：{group.Key.LocalEndTime:t}");
+                        $"开放 {open.VsRule.ChineseName}  开始时间：{group.Key.LocalStartTime:t} 结束时间：{group.Key.LocalEndTime:t}");
                     sb.Append(
                         $"[CQ:image,file={open.VsStages[0].Name},url={open.VsStages[0].Image.Url}]");
                     sb.Append(
