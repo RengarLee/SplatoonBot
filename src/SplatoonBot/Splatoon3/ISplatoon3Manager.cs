@@ -8,4 +8,6 @@ public interface ISplatoon3Manager
     Task<List<CoopGroupingRegularSchedule>> GetCoopGroupingRegularSchedules(DateTime startTime, DateTime endTime);
 
     List<string> GetBankaraSchedulesMessages(List<BankaraSchedule> schedules);
+
+    List<string> GetCoopGroupingRegularSchedulesMessages(List<CoopGroupingRegularSchedule> schedules);
 }
