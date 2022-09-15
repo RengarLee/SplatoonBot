@@ -81,4 +81,34 @@ public class Splatoon3Manager : ISplatoon3Manager
         _stringBuilder.Return(sb);
         return list;
     }
+
+    public List<string> GetCoopGroupingRegularSchedulesMessages(List<CoopGroupingRegularSchedule> schedules)
+    {
+        var list = new List<string>();
+        var sb = _stringBuilder.Create();
+        foreach (var group in schedules.GroupBy(s => (s.LocalStartTime, s.LocalEndTime)).OrderBy(s => s.Key))
+        {
+            var schedule = group.FirstOrDefault();
+            if (schedule != null)
+            {
+                var setting = schedule.Setting;
+                sb.AppendLine(
+                    $"打工 开始时间：{@group.Key.LocalStartTime:MM/dd hh:00} 结束时间：{@group.Key.LocalEndTime:MM/dd hh:00}");
+                sb.AppendLine("地图");
+                sb.Append(
+                    $"[CQ:image,file={setting.CoopStage.Name},url={setting.CoopStage.ThumbnailImage.Url}]");
+                sb.AppendLine("武器");
+                foreach (var weapon in setting.Weapons)
+                {
+                    sb.Append(
+                        $"[CQ:image,file={weapon.Name},url={weapon.Image.Url}]");
+                }
+            }
+            list.Add(sb.ToString());
+            sb.Clear();
+        }
+
+        _stringBuilder.Return(sb);
+        return list;
+    }
 }

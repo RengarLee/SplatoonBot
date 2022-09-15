@@ -20,15 +20,21 @@ public class CqHttpService : ICqHttpService
 
     public async Task<List<string>> GetCqSplatoonScheduleMessagesAsync(string text, bool isSend, long? groupId)
     {
-        if (_textManager.IsSplatoonText(text))
+        var (startTime, endTime) = _textManager.GetSplatoonScheduleTime(text);
+        var messages = new List<string>(0);
+        if (_textManager.IsBankara(text))
         {
-            var (startTime, endTime) = _textManager.GetSplatoonScheduleTime(text);
             var schedules = await _splatoon3Manager.GetBankaraSchedules(startTime, endTime);
-            var messages = _splatoon3Manager.GetBankaraSchedulesMessages(schedules);
-            if (isSend) await _cqHttpManager.SendGroupMessagesAsync(groupId.GetValueOrDefault(), messages);
-            return messages;
+            messages = _splatoon3Manager.GetBankaraSchedulesMessages(schedules);
         }
-        return new List<string>(0);
+        else if (_textManager.IsCoopGrouping(text))
+        {
+            var schedules = await _splatoon3Manager.GetCoopGroupingRegularSchedules(startTime, endTime);
+            messages = _splatoon3Manager.GetCoopGroupingRegularSchedulesMessages(schedules);
+        }
+        if (isSend) 
+            await _cqHttpManager.SendGroupMessagesAsync(groupId.GetValueOrDefault(), messages);
+        return messages;
     }
 
     public async Task HandleEventAsync(GeneralEvent generalEvent)

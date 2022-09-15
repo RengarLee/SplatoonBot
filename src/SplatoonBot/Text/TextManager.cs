@@ -14,14 +14,37 @@ public class TextManager : ITextManager
     /// <returns></returns>
     public bool IsSplatoonText(string text)
     {
+        return IsBankara(text) || IsCoopGrouping(text);
+    }
+
+    public bool IsBankara(string text)
+    {
         return text.All(c => c == '图');
+    }
+
+    public bool IsCoopGrouping(string text)
+    {
+        return text.All(c => c == '工');
     }
 
     public (DateTime startTime, DateTime endTime) GetSplatoonScheduleTime(string text)
     {
-        var count = text.Count(s => s.Equals('图'));
+        var wordKey = IsBankara(text) ? '图' : IsCoopGrouping(text) ? '工' : default;
+        var hour = 0;
+        if (IsBankara(text))
+        {
+            wordKey = '图';
+            hour = 2;
+        }
+        else if (IsCoopGrouping(text))
+        {
+            wordKey = '工';
+            hour = 40;
+        }
+
+        var count = text.Count(s => s.Equals(wordKey));
         var startTime = DateTime.Now;
-        var endTime = startTime.AddHours((count - 1) * 2);
+        var endTime = startTime.AddHours((count - 1) * hour);
         return (startTime, endTime);
     }
 
@@ -40,6 +63,7 @@ public class TextManager : ITextManager
                 sb.Append(
                     $"[CQ:image,file={gachi.StageB.Name},url=https://splatoon2.ink/assets/splatnet{gachi.StageB.Image}]");
             }
+
             var league = group.FirstOrDefault(g => g.GameMode.Key == "league");
             if (league != null)
             {
@@ -49,9 +73,11 @@ public class TextManager : ITextManager
                 sb.Append(
                     $"[CQ:image,file={league.StageB.Name},url=https://splatoon2.ink/assets/splatnet{league.StageB.Image}]");
             }
+
             list.Add(sb.ToString());
             sb.Clear();
         }
+
         _stringBuilder.Return(sb);
         return list;
     }

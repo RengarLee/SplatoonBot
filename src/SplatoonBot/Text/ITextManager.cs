@@ -11,6 +11,10 @@ namespace SplatoonBot.Text
         /// <returns></returns>
         public bool IsSplatoonText(string text);
 
+        public bool IsCoopGrouping(string text);
+
+        public bool IsBankara(string text);
+
         /// <summary>
         ///     IsSplatoonText
         /// </summary>
