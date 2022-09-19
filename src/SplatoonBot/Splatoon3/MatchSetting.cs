@@ -13,6 +13,7 @@ public class MatchSetting
 
     public string Mode { get; set; }
 
+    [JsonIgnore]
     public bool IsOpen => Mode.Equals("OPEN");
 }
 

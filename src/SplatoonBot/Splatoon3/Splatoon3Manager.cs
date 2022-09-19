@@ -93,7 +93,7 @@ public class Splatoon3Manager : ISplatoon3Manager
             {
                 var setting = schedule.Setting;
                 sb.AppendLine(
-                    $"打工 开始时间：{@group.Key.LocalStartTime:MM/dd hh:00} 结束时间：{@group.Key.LocalEndTime:MM/dd hh:00}");
+                    $"打工 开始时间：{@group.Key.LocalStartTime:MM/dd HH:mm} 结束时间：{@group.Key.LocalEndTime:MM/dd HH:mm}");
                 sb.AppendLine("地图");
                 sb.Append(
                     $"[CQ:image,file={setting.CoopStage.Name},url={setting.CoopStage.ThumbnailImage.Url}]");
