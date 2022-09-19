@@ -40,7 +40,7 @@ public class CqHttpService : ICqHttpService
     public async Task HandleEventAsync(GeneralEvent generalEvent)
     {
         //过期数据不处理
-        if (DateTime.Now >= generalEvent.Time.AddMinutes(5))
+        if (DateTime.Now.ToUniversalTime() >= generalEvent.Time.ToUniversalTime().AddMinutes(5))
             return;
         //仅处理Splatoon群地图查询
         if (generalEvent.IsGroupMessage())
