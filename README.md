@@ -13,6 +13,7 @@
 
 ### 效果
 ![图](./images/Bankara.png)
+
 ![工](./images/CoopGrouping.png)
 
 go-chttp端效果
@@ -25,10 +26,13 @@ go-chttp端效果
 
 go-cqhttp的config.yml配置需要注意的地方
 post-format更改为array类型
+
 ![post-format](./images/config1.png)
+
 红框1为CqHttp.URL所要填写的内容（如果不在同一台机器部署，需要更改为go-chttp机器所在地址）
 
 红框2为本项目所在地址（如果不在同一条机器，需要更改为项目所在地址）
+
 ![url](./images/config2.png)
 
 ### 部署准备
