@@ -14,13 +14,20 @@ public class Splatoon3Manager : ISplatoon3Manager
         _memoryCache = memoryCache;
     }
 
-    public Task<SchedulesData?> GetSchedulesAsync()
+    public async Task<SchedulesData?> GetSchedulesAsync()
     {
-        return _memoryCache.GetOrCreateAsync("splatoon3schedules", key =>
+        var result = await _memoryCache.GetOrCreateAsync("splatoon3schedules", key =>
         {
             var client = new RestClient("https://splatoon3.ink/data");
+            key.SetAbsoluteExpiration(new TimeSpan(1, 0, 0));
             return client.GetAsync<SchedulesData>(new RestRequest("schedules.json"));
         });
+        if (result==null)
+        {
+            _memoryCache.Remove("splatoon3schedules");
+        }
+
+        return result;
     }
 
     public async Task<List<RegularSchedule>> GetRegularSchedules(DateTime startTime, DateTime endTime)

@@ -18,6 +18,11 @@ public class SchedulesData
     {
         return  Data.CoopGroupingSchedule.RegularSchedules.Nodes.GetSchedules(startTime, endTime);
     }
+
+    //public bool IsValid()
+    //{
+    //   return !Data.RegularSchedules.Nodes[0].RegularMatchSetting.IsVsSetting.Equals("string");
+    //}
 }
 
 public class Splatoon3Schedules

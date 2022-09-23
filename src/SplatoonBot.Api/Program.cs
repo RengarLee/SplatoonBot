@@ -15,12 +15,8 @@ builder.Services.AddSingleton<ITextManager, TextManager>();
 builder.Services.AddSingleton<ICqHttpManager, CqHttpManager>();
 builder.Services.AddSingleton<ICqHttpService, CqHttpService>();
 var app = builder.Build();
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseHttpsRedirection();
 app.MapControllers();
 
