@@ -19,6 +19,7 @@ public class Splatoon3Manager : ISplatoon3Manager
         return _memoryCache.GetOrCreateAsync("splatoon3schedules", key =>
         {
             var client = new RestClient("https://splatoon3.ink/data");
+            key.SetAbsoluteExpiration(new TimeSpan(1, 0, 0));
             return client.GetAsync<SchedulesData>(new RestRequest("schedules.json"));
         });
     }
