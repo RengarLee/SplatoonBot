@@ -8,5 +8,5 @@ public class BankaraSchedules
 public class BankaraSchedule : BaseSchedule
 {
     public List<MatchSetting> BankaraMatchSettings { get; set; }
-    public List<MatchSetting> FestMatchSetting { get; set; }
+    public FestMatchSetting FestMatchSetting { get; set; }
 }
