@@ -17,6 +17,11 @@ public class MatchSetting
     public bool IsOpen => Mode.Equals("OPEN");
 }
 
+public class FestMatchSetting
+{
+    [JsonPropertyName("__typeName")] public string TypeName { get; set; }
+}
+
 public class VsRule
 {
     public string Name { get; set; }
